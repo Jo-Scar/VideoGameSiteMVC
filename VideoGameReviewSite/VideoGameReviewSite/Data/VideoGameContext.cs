@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using VideoGameReviewSite.Models;
 
 namespace VideoGameReviewSite.Data
 {
