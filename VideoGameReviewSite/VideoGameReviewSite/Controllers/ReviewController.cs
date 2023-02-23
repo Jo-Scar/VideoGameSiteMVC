@@ -2,7 +2,7 @@
 
 namespace VideoGameReviewSite.Controllers
 {
-    public class VideoGameReviewSiteController : Controller
+    public class ReviewController : Controller
     {
         public IActionResult Index()
         {

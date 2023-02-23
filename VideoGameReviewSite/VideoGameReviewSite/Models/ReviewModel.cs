@@ -2,14 +2,11 @@
 
 namespace VideoGameReviewSite.Models
 {
-    public class VideoGameReviewModel
+    public class ReviewModel
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string ImageURL { get; set; }
-
-        public string Reviews { get; set; }
+        public string Reviewer { get; set; }
         public string Description { get; set; }
 
     }
