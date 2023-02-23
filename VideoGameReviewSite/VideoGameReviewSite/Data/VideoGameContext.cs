@@ -5,6 +5,6 @@ namespace VideoGameReviewSite.Data
 {
     public class VideoGameContext : DbContext
     {
-        DbSet<ProductVideoGameModel> VideoGameReview { get; set; }
+        DbSet<ProductVideoGameModel> VideoGame { get; set; }
     }
 }
