@@ -11,6 +11,9 @@ namespace VideoGameReviewSite.Models
 
         public string Reviews { get; set; }
         public string Description { get; set; }
+        public double Cost { get; set; }
+        public string ReleaseDate { get; set; }
+
 
     }
 }
