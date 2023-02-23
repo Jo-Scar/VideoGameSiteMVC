@@ -1,12 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VideoGameReviewSite.Data;
 
 namespace VideoGameReviewSite.Controllers
 {
     public class ProductVideoGameController : Controller
     {
-        public IActionResult Index()
+        private readonly VideoGameContext _context;
+        public ProductVideoGameController(VideoGameContext context)
         {
-            return View();
+            _context = context;
+        }
+        public ActionResult Index()
+        {
+            return View(_context.VideoGame.ToList());
         }
     }
 }
