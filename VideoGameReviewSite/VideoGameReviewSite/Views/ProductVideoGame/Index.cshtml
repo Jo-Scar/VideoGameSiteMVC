@@ -16,7 +16,7 @@
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ImageURL)
+                @Html.DisplayNameFor(model => model.Image)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Description)
@@ -39,15 +39,12 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td class="align-middle">
-                <img class="rounded-circle" src="@item.ImageURL" alt="@item.Title"
-                style="max-width: 150px">
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageURL)
+            <td class="align-middle">
+                <img src="@Url.Content(item.Image)" alt="@item.Title"
+                style="max-width: 150px">
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)

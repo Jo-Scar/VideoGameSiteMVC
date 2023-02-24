@@ -9,7 +9,7 @@ namespace VideoGameReviewSite.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            String connectionString = "Server=(localdb)\\mssqllocaldb;Database=VideoGameReviews;Trusted_Connection=True;";
+            String connectionString = "Server=(localdb)\\mssqllocaldb;Database=VideoGameReviews4;Trusted_Connection=True;";
             optionsBuilder.UseSqlServer(connectionString);
         }
 
@@ -20,23 +20,23 @@ namespace VideoGameReviewSite.Data
                 {
                     Id = 1,
                     Title = "Call Of Duty Modern Warefare II",
-                    ImageURL = "https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/common/cod-mw2-logo.png",
+                    Image = "https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/common/cod-mw2-logo.png",
                     Description = "Call of Duty: Modern Warfare 2 is a 2009 first-person shooter game developed by Infinity Ward and published by Activision. It is the sixth installment in the Call of Duty series and the direct sequel to Call of Duty 4: Modern Warfare",
                     Reviews = "Troll Capital and full of glitches TL;DR: UI is full of bugs and issues. DMZ is full of squad hunting Trolls, multiplayer is full of hyped up Call of Duty League wanna bees, with either Smgs or no scope Snipers. The assault rifles all suck by comparision. ",
                     Publisher = "Activision",
                     ReleaseDate = "11/10/2009",
-                    Cost = 1,
+                    Cost = 39.99,
                 },
                 new ProductVideoGameModel()
                 {
                     Id = 2,
                     Title = "The Sims",
-                    ImageURL = "https://upload.wikimedia.org/wikipedia/en/2/22/The_Sims_Coverart.png",
+                    Image = "https://upload.wikimedia.org/wikipedia/en/2/22/The_Sims_Coverart.png",
                     Description = "It is a simulation of the daily activities of one or more virtual people,Players control customizable Sims as they pursue career and relationship goals. Players can also use their Sims' income to renovate their living space, and purchase home furnishings, or clothing for their household. Players can also choose to pursue a social and successful life.",
                     Reviews = "This game is so, so, so, good, but has it's problems. The OST is some of the best I've heard in video games as a whole, the gameplay is challenging and exciting, and this game as so much personality to it. However, the game is wayyy too hard to actually relax in it ",
                     Publisher = "Electronic Arts",
                     ReleaseDate = "02/04/2000",
-                    Cost = '$'+29.95,
+                    Cost = 29.95,
                 });
         }
     }
