@@ -39,6 +39,10 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td class="align-middle">
+                <img class="rounded-circle" src="@item.ImageURL" alt="@item.Title"
+                style="max-width: 150px">
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
