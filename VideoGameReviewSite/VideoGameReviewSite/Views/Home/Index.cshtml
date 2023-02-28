@@ -3,17 +3,23 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Landing Page</h1>
-    <p>Learn all about Video Games and their Reviews.</p>
+    <h4 class="display-4">Video Game User Reviews website</h4>
+    <p>You can edit, create, and delete a reviews.</p>
     <p class="text-center">Click Links below to navigate</p>
 </div>
-    <div align="center">
-        <ol class="nav-item flex-grow-1">
-            <li class="nav-item">
-                <a class="nav-link " asp-area="" asp-controller="ProductVideoGame" asp-action="Index">Video Games</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " asp-area="" asp-controller="Review" asp-action="Index">Publishers</a>
-            </li>
-        </ol>
-    </div>
+<div class="container">
+    <ol class="myOL">
+        <li class="nav-item">
+            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " asp-area="" asp-controller="ProductVideoGame" asp-action="Index">Video Games</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " asp-area="" asp-controller="Review" asp-action="Index">Publishers</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </li>
+    </ol>
+</div>
