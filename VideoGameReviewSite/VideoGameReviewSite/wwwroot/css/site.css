@@ -22,23 +22,41 @@ nav {
     background-color: green;
 }
 
-tr, th, td, table {
+tr {
+    color: red;
+    border: darkred;
+}
+th {
     color: green;
     border: darkred;
 }
-
+table {
+    color: blue;
+    border: darkgreen;
+}
+td {
+    color: green;
+    flex-grow:1;
+}
 h1 {
     color: red;
     border: darkgreen;
+    flex-grow: 1;
 }
 h2 {
     color: blue;
+    border: darkgreen;
+    flex-grow: 1;
 }
 h3 {
     color: green;
+    border: darkgreen;
+    flex-grow: 1;
 }
 h4 {
     color: red;
+    border: darkgreen;
+    flex-grow: 1;
 }
 p {
     color:green;
@@ -47,6 +65,8 @@ p {
 text {
     text-justify: auto;
     color: blue;
+    border: darkgreen;
+    flex-grow: 1;
 }
 
 div.container {
@@ -56,4 +76,8 @@ div.container {
 ol.myOL {
     display: inline-block;
     text-align: left;
+}
+
+ul {
+    color: yellow;
 }
