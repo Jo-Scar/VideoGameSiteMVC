@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VideoGameReviewSite.Models
 {
@@ -9,8 +10,27 @@ namespace VideoGameReviewSite.Models
         public string Title { get; set; }
         public string Image { get; set; }
         public string Description { get; set; }
+        public virtual ReviewModel? Publishers { get; set; }
+        [NotMapped]
+        public string? NewPublisher { get; set; }
+        [ForeignKey("ReviewModel")]
+        public int PublishersId { get; set; }
+        [NotMapped]
         public string Reviews { get; set; }       
-        public string Publisher { get; set; }
+        public string Publisher
+        {
+            get
+            {
+                if(Publishers is not null)
+                {
+                    return Publishers.Title;
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
         public string ReleaseDate { get; set; }
         public double Cost { get; set; }
     }
