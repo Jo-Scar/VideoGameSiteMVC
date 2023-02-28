@@ -79,10 +79,6 @@ ol.myOL {
     color: red;
 }
 
-ul {
-    color: yellow;
-}
-
 div {
     flex-grow: 1;
 }
