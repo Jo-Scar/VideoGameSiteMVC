@@ -76,8 +76,13 @@ div.container {
 ol.myOL {
     display: inline-block;
     text-align: left;
+    color: red;
 }
 
 ul {
     color: yellow;
+}
+
+div {
+    flex-grow: 1;
 }
