@@ -14,5 +14,15 @@ html {
 }
 
 body {
+    background-color: black;
   margin-bottom: 60px;
+}
+
+nav{
+    background-color: green;
+}
+
+tr, th, td, table, h1, h4, div {
+    color: green;
+    border: darkred;
 }
