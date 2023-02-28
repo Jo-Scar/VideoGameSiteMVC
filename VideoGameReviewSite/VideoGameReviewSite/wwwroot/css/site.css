@@ -18,11 +18,19 @@ body {
   margin-bottom: 60px;
 }
 
-nav{
+nav {
     background-color: green;
 }
 
-tr, th, td, table, h1, h4, div {
+tr, th, td, table, h4, div {
     color: green;
     border: darkred;
+}
+h1 {
+        color:red;
+        border: darkgreen;
+}
+text {
+    text-justify: auto;
+    color: blue;
 }

@@ -3,6 +3,17 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome :) Video Game Reviews (: </h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Landing Page</h1>
+    <p>Learn all about Video Games and their Reviews.</p>
+    <p class="text-center">Click Links below to navigate</p>
 </div>
+    <div align="center">
+        <ol class="nav-item flex-grow-1">
+            <li class="nav-item">
+                <a class="nav-link " asp-area="" asp-controller="ProductVideoGame" asp-action="Index">Video Games</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " asp-area="" asp-controller="Review" asp-action="Index">Publishers</a>
+            </li>
+        </ol>
+    </div>
