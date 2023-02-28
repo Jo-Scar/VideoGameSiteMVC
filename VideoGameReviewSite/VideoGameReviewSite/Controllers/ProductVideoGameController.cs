@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using VideoGameReviewSite.Data;
 using VideoGameReviewSite.Models;
 
@@ -13,7 +14,8 @@ namespace VideoGameReviewSite.Controllers
         }
         public ActionResult Index()
         {
-            return View(_context.VideoGame.ToList());
+            return View(_context.VideoGame
+                .Include(p => p.Publishers).ToList());
         }
         public ActionResult Create()
         {
@@ -24,6 +26,8 @@ namespace VideoGameReviewSite.Controllers
         {
             if (ModelState.IsValid)
             {
+                productVideoGame.PublishersId = GetPublisher
+                    (productVideoGame.NewPublisher);
                 _context.VideoGame.Add(productVideoGame);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -32,7 +36,7 @@ namespace VideoGameReviewSite.Controllers
         }
         public ActionResult Delete(int id)
         {
-            if(id == null)
+            if(id == 0)
             {
                 return NotFound();
             }
@@ -65,7 +69,8 @@ namespace VideoGameReviewSite.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Entry(productVideoGame).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                productVideoGame.PublishersId = GetPublisher(productVideoGame.NewPublisher);
+                _context.Entry(productVideoGame).State = EntityState.Modified;
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -73,12 +78,26 @@ namespace VideoGameReviewSite.Controllers
         }
         public ActionResult Details(int id)
         {
-            if(id == null)
+            if(id == 0)
             {
                 return NotFound();
             }
             var productVideoGame = _context.VideoGame.Find(id);
             return View(productVideoGame);
+        }
+        private int GetPublisher(string publisher)
+        {
+            ReviewModel? pub = null;
+            pub = _context.Publishers
+                .Where(p => p.Name.ToLower() == publisher.ToLower())
+                .FirstOrDefault();
+            if(pub == null)
+            {
+                pub = new ReviewModel { Name = publisher };
+                _context.Add(pub);
+                _context.SaveChanges(true);
+            }
+            return pub.Id;
         }
     }
 }

@@ -40,9 +40,8 @@ namespace VideoGameReviewSite.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Publisher")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("PublishersId")
+                        .HasColumnType("int");
 
                     b.Property<string>("ReleaseDate")
                         .IsRequired()
@@ -58,6 +57,8 @@ namespace VideoGameReviewSite.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PublishersId");
+
                     b.ToTable("VideoGame");
 
                     b.HasData(
@@ -67,7 +68,7 @@ namespace VideoGameReviewSite.Migrations
                             Cost = 39.990000000000002,
                             Description = "Call of Duty: Modern Warfare 2 is a 2009 first-person shooter game developed by Infinity Ward and published by Activision. It is the sixth installment in the Call of Duty series and the direct sequel to Call of Duty 4: Modern Warfare",
                             Image = "https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/common/cod-mw2-logo.png",
-                            Publisher = "Activision",
+                            PublishersId = 1,
                             ReleaseDate = "11/10/2009",
                             Reviews = "Troll Capital and full of glitches TL;DR: UI is full of bugs and issues. DMZ is full of squad hunting Trolls, multiplayer is full of hyped up Call of Duty League wanna bees, with either Smgs or no scope Snipers. The assault rifles all suck by comparision. ",
                             Title = "Call Of Duty Modern Warefare II"
@@ -78,11 +79,56 @@ namespace VideoGameReviewSite.Migrations
                             Cost = 29.949999999999999,
                             Description = "It is a simulation of the daily activities of one or more virtual people,Players control customizable Sims as they pursue career and relationship goals. Players can also use their Sims' income to renovate their living space, and purchase home furnishings, or clothing for their household. Players can also choose to pursue a social and successful life.",
                             Image = "https://upload.wikimedia.org/wikipedia/en/2/22/The_Sims_Coverart.png",
-                            Publisher = "Electronic Arts",
+                            PublishersId = 2,
                             ReleaseDate = "02/04/2000",
                             Reviews = "This game is so, so, so, good, but has it's problems. The OST is some of the best I've heard in video games as a whole, the gameplay is challenging and exciting, and this game as so much personality to it. However, the game is wayyy too hard to actually relax in it ",
                             Title = "The Sims"
                         });
+                });
+
+            modelBuilder.Entity("VideoGameReviewSite.Models.ReviewModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Publishers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Activision"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Electronic Arts"
+                        });
+                });
+
+            modelBuilder.Entity("VideoGameReviewSite.Models.ProductVideoGameModel", b =>
+                {
+                    b.HasOne("VideoGameReviewSite.Models.ReviewModel", "Publishers")
+                        .WithMany("VideoGame")
+                        .HasForeignKey("PublishersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Publishers");
+                });
+
+            modelBuilder.Entity("VideoGameReviewSite.Models.ReviewModel", b =>
+                {
+                    b.Navigation("VideoGame");
                 });
 #pragma warning restore 612, 618
         }
