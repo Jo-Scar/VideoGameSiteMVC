@@ -10,7 +10,7 @@ namespace VideoGameReviewSite.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            String connectionString = "Server=(localdb)\\mssqllocaldb;Database=VideoGameSite4;Trusted_Connection=True;";
+            String connectionString = "Server=(localdb)\\mssqllocaldb;Database=VideoGameSite5;Trusted_Connection=True;";
             optionsBuilder.UseSqlServer(connectionString);
         }
 
