@@ -13,9 +13,19 @@ html {
     min-height: 100%;
 }
 
+header {
+    color: red;
+    border: darkgreen;
+}
+
 body {
-    background-color: black;
-    margin-bottom: 60px;
+    background-image: url(../images/background3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 70%;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 nav {
@@ -30,6 +40,8 @@ th {
     color: green;
     border: darkred;
 }
+
+
 table {
     color: blue;
     border: darkgreen;
@@ -37,6 +49,10 @@ table {
 td {
     color: green;
     flex-grow:1;
+}
+dt {
+    color: red;
+    border: darkgreen;
 }
 h1 {
     color: red;
@@ -62,6 +78,16 @@ p {
     color:green;
 }
 
+dd {
+    color: green;
+    border: darkred;
+    text-align: center;
+}
+
+div {
+    flex-grow: 1;
+}
+
 text {
     text-justify: auto;
     color: blue;
@@ -69,16 +95,32 @@ text {
     flex-grow: 1;
 }
 
+dd.Image {
+    border: darkgreen;
+}
+
+div.form-group {
+    color: red;
+    border: darkgreen;
+}
+
+div.row {
+    color: red;
+
+}
+
 div.container {
     text-align: center;
+    color:gray;
+    
 }
 
 ol.myOL {
     display: inline-block;
-    text-align: left;
+    text-align: center;
     color: red;
+
 }
 
-div {
-    flex-grow: 1;
-}
+
+

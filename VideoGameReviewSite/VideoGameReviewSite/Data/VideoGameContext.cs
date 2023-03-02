@@ -10,7 +10,7 @@ namespace VideoGameReviewSite.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            String connectionString = "Server=(localdb)\\mssqllocaldb;Database=VideoGameSite;Trusted_Connection=True;";
+            String connectionString = "Server=(localdb)\\mssqllocaldb;Database=VideoGameSite4;Trusted_Connection=True;";
             optionsBuilder.UseSqlServer(connectionString);
         }
 
@@ -32,13 +32,13 @@ namespace VideoGameReviewSite.Data
                 { 
 
                     Id = 1,
-                    Title = "Call Of Duty Modern Warefare II",
-                    Image = "https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/mw2/common/cod-mw2-logo.png",
+                    Title = "Call of Duty: Modern Warfare II",
+                    Image = "https://upload.wikimedia.org/wikipedia/en/4/4a/Call_of_Duty_Modern_Warfare_II_Key_Art.jpg",
                     PublishersId = 1,
-                    Description = "Call of Duty: Modern Warfare 2 is a 2009 first-person shooter game developed by Infinity Ward and published by Activision. It is the sixth installment in the Call of Duty series and the direct sequel to Call of Duty 4: Modern Warfare",
+                    Description = "Call of Duty: Modern Warfare II is a 2022 first-person shooter game developed by Infinity Ward and published by Activision. It is a sequel to the 2019 reboot, and serves as the nineteenth installment in the overall Call of Duty series.",
                     Reviews = "Troll Capital and full of glitches TL;DR: UI is full of bugs and issues. DMZ is full of squad hunting Trolls, multiplayer is full of hyped up Call of Duty League wanna bees, with either Smgs or no scope Snipers. The assault rifles all suck by comparision. ",
-                    ReleaseDate = "11/10/2009",
-                    Cost = 39.99,
+                    ReleaseDate = "10/28/2022",
+                    Cost = 31.81,
                 },
                 new ProductVideoGameModel()
                 {

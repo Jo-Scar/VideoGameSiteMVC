@@ -34,14 +34,17 @@ namespace VideoGameReviewSite.Controllers
             }
             return View(productVideoGame);
         }
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int Id)
         {
-            if(id == 0)
+            if(Id == 0)
             {
                 return NotFound();
             }
-            var game = _context.VideoGame.FirstOrDefault(
-                g => g.Id == id);
+            var game = _context.VideoGame
+                .Where(g => g.Id == Id)
+                .Include(g => g.Publishers)
+                .FirstOrDefault(
+                g => g.Id == Id);
             if(game == null)
             {
                 return NotFound();
@@ -76,13 +79,16 @@ namespace VideoGameReviewSite.Controllers
             }
             return View(productVideoGame);
         }
-        public ActionResult Details(int id)
+        public ActionResult Details(int Id)
         {
-            if(id == 0)
+            if(Id == 0)
             {
                 return NotFound();
             }
-            var productVideoGame = _context.VideoGame.Find(id);
+            var productVideoGame = _context.VideoGame
+                .Where(b => b.Id == Id)
+                .Include(b => b.Publishers)
+                .FirstOrDefault();
             return View(productVideoGame);
         }
         private int GetPublisher(string publisher)
