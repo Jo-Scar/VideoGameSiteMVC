@@ -7,7 +7,7 @@
 namespace VideoGameReviewSite.Migrations
 {
     /// <inheritdoc />
-    public partial class _1 : Migration
+    public partial class first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

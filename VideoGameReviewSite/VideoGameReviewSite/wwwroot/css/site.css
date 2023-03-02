@@ -1,5 +1,5 @@
 html {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 @media (min-width: 768px) {
@@ -19,13 +19,19 @@ header {
 }
 
 body {
-    background-image: url(../images/background3.jpg);
+    
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    background-size: 70%;
+    background-size: 50%;
+    background-color: black;
     margin-top: 10px;
     margin-bottom: 30px;
+    
+}
+
+img {
+    opacity: 1;
 }
 
 nav {
@@ -75,7 +81,13 @@ h4 {
     flex-grow: 1;
 }
 p {
-    color:green;
+    font-size:large;
+    color: greenyellow;
+    border: darkred;
+}
+p.text-center {
+    color:greenyellow;
+    border:darkred;
 }
 
 dd {
@@ -120,6 +132,15 @@ ol.myOL {
     text-align: center;
     color: red;
 
+}
+
+div.container {
+    opacity: 1;
+}
+
+body.BackgroundImage {
+    background-image: url(../images/background3.jpg);
+    opacity: 1;
 }
 
 

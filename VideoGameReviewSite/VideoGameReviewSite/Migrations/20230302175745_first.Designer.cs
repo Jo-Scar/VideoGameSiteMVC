@@ -11,8 +11,8 @@ using VideoGameReviewSite.Data;
 namespace VideoGameReviewSite.Migrations
 {
     [DbContext(typeof(VideoGameContext))]
-    [Migration("20230302063341_1")]
-    partial class _1
+    [Migration("20230302175745_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
